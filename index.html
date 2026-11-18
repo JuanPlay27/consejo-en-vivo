@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1b1464">
+<title>Consejo en vivo · ISO/IEC 38500</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect x=%274%27 y=%2710%27 width=%2756%27 height=%2746%27 rx=%2716%27 fill=%27%2336e2d0%27 stroke=%27%230b3b4a%27 stroke-width=%274%27/%3E%3Crect x=%2714%27 y=%2720%27 width=%2736%27 height=%2726%27 rx=%279%27 fill=%27%230b2a3a%27/%3E%3Ccircle cx=%2725%27 cy=%2732%27 r=%274%27 fill=%27%237dfcff%27/%3E%3Ccircle cx=%2739%27 cy=%2732%27 r=%274%27 fill=%27%237dfcff%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/quiz.css">
+</head>
+<body class="player">
+<div class="p-app">
+  <div class="p-top" id="top" hidden>
+    <span class="pill p-me" id="meName"></span>
+    <span class="pill" id="meScore">0 pts</span>
+    <span class="p-conn" id="conn"><i></i><span id="connText">En línea</span></span>
+  </div>
+  <main id="view" style="display:flex;flex-direction:column;gap:14px"></main>
+  <p class="p-small">ISO/IEC 38500 · Grupo 2 · Gestión de TIC · UFPS</p>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script type="module" src="js/player.js"></script>
+</body>
+</html>
