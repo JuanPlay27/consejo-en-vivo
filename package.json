@@ -1,0 +1,10 @@
+{
+  "name": "consejo-en-vivo",
+  "private": true,
+  "type": "module",
+  "description": "Cuestionario en vivo sobre ISO/IEC 38500 (Grupo 2, Gestión de TIC, UFPS).",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "start": "python3 -m http.server 8080"
+  }
+}

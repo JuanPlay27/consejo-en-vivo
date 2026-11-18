@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consejo en vivo · Pantalla</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect x=%274%27 y=%2710%27 width=%2756%27 height=%2746%27 rx=%2716%27 fill=%27%2336e2d0%27 stroke=%27%230b3b4a%27 stroke-width=%274%27/%3E%3Crect x=%2714%27 y=%2720%27 width=%2736%27 height=%2726%27 rx=%279%27 fill=%27%230b2a3a%27/%3E%3Ccircle cx=%2725%27 cy=%2732%27 r=%274%27 fill=%27%237dfcff%27/%3E%3Ccircle cx=%2739%27 cy=%2732%27 r=%274%27 fill=%27%237dfcff%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/quiz.css">
+</head>
+<body class="screen">
+<header class="q-top">
+  <div class="q-token" id="phaseToken">★</div>
+  <div class="q-phase" id="phaseName">Consejo en vivo<small id="phaseSub">ISO/IEC 38500 · Grupo 2 · UFPS</small></div>
+  <div class="q-pills">
+    <span class="pill q-mode" id="modePill" hidden>MODO ENSAYO</span>
+    <span class="pill" id="connPill" hidden>Sin conexión</span>
+    <span class="pill" id="playersPill">0 conectados</span>
+    <span class="pill" id="qPill">5 preguntas</span>
+  </div>
+</header>
+
+<main class="q-viewport" id="viewport" aria-live="polite"></main>
+
+<section class="overlay q-lobby" id="lobby" aria-label="Sala de espera">
+  <div class="q-lobby-grid">
+    <div class="q-qr-card">
+      <div class="q-qr" id="qr"></div>
+      <div class="q-url" id="joinUrl"></div>
+    </div>
+    <div>
+      <h1>Entra al <em>Consejo en vivo</em></h1>
+      <p>Escanea el QR: te damos un nombre secreto, sin registrarte.</p>
+      <p>5 preguntas que recorren la infografía. Piensa, adivina… y después lo explicamos.</p>
+      <div class="q-count"><span id="lobbyCount">0</span> consejeros conectados</div>
+      <div class="q-names" id="lobbyNames"></div>
+    </div>
+  </div>
+</section>
+
+<div class="q-host" id="host" hidden aria-label="Controles del anfitrión">
+  <button class="btn ghost" id="hToggle">Anfitrión (H)</button>
+  <div class="q-host-actions">
+    <button class="btn" id="hStart">Empezar (E)</button>
+    <button class="btn ghost" id="hPrev">Anterior (←)</button>
+    <button class="btn pink" id="hNext">Siguiente (Espacio)</button>
+    <button class="btn ghost" id="hQr">QR (Q)</button>
+    <button class="btn ghost" id="hLive">Conteo en vivo (D)</button>
+    <button class="btn ghost" id="hReset">Reiniciar (R R)</button>
+    <button class="btn ghost" id="hBots">+5 bots de ensayo (B)</button>
+    <button class="btn ghost" id="hNoBots">Quitar bots (X)</button>
+    <button class="btn ghost" id="hMute">Sonido (M)</button>
+    <button class="btn ghost" id="hFull">Pantalla completa (F)</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+<script type="module" src="js/screen.js"></script>
+</body>
+</html>

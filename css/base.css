@@ -1,0 +1,57 @@
+/* Base compartida con "El mapa del Consejo" (misma paleta del juego de Nova) */
+:root {
+  --bg1: #1b1464; --bg2: #5b21b6; --bg3: #0ea5b7;
+  --pink: #ff5d8f; --cyan: #36e2d0; --yellow: #ffd23f; --orange: #ff9f1c;
+  --ink: #101040; --muted: #3f3d6b; --good: #22c55e; --bad: #ef4444;
+  --shadow: 0 8px 0 rgba(0, 0, 0, .25);
+  --display: "Baloo 2", "Trebuchet MS", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: "Nunito", "Trebuchet MS", "Segoe UI", Roboto, Arial, sans-serif;
+  color: #fff;
+  background:
+    radial-gradient(rgba(255, 255, 255, .07) 1.6px, transparent 1.9px) 0 0 / 30px 30px,
+    linear-gradient(135deg, var(--bg1), var(--bg2) 55%, var(--bg3));
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+button { font-family: inherit; cursor: pointer; }
+[hidden] { display: none !important; }
+
+.pill { background: rgba(0, 0, 0, .28); border-radius: 999px; padding: .4em 1em; font-weight: 800; white-space: nowrap; }
+.btn {
+  border: 0; font-weight: 900; font-size: 1.15rem; padding: .85em 1.6em; border-radius: 999px;
+  background: var(--yellow); color: var(--ink); box-shadow: 0 7px 0 #c9980a; transition: transform .12s, box-shadow .12s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 9px 0 #c9980a; }
+.btn:active { transform: translateY(4px); box-shadow: 0 3px 0 #c9980a; }
+.btn.pink { background: var(--pink); box-shadow: 0 7px 0 #b02a5a; }
+.btn.ghost { background: rgba(255, 255, 255, .16); color: #fff; box-shadow: none; }
+.btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+.btn:focus-visible, .branch-btn:focus-visible, input:focus-visible { outline: 4px solid #fff; outline-offset: 3px; }
+
+.nova { width: 100%; height: auto; display: block; }
+.bob { animation: bob 2.6s ease-in-out infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes pop { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-14px); } 40% { transform: translateX(12px); } 60% { transform: translateX(-8px); } 80% { transform: translateX(6px); } }
+.shake { animation: shake .45s; }
+
+.confetti { position: fixed; top: -40px; z-index: 90; pointer-events: none; border-radius: 3px; animation: fall linear forwards; }
+@keyframes fall { to { transform: translateY(115vh) rotate(var(--rot, 360deg)); } }
+
+.toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 95;
+  background: #fff; color: var(--ink); font-weight: 800; padding: .7em 1.2em; border-radius: 16px;
+  box-shadow: var(--shadow); opacity: 0; transition: opacity .2s; pointer-events: none; max-width: 90vw; text-align: center;
+}
+.toast.on { opacity: 1; }
+
+.fatal { max-width: 720px; margin: 10vh auto; background: #fff; color: var(--ink); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); line-height: 1.5; }
+.fatal h2 { font-family: var(--display); color: #b91c1c; margin-bottom: 8px; }
+.fatal code { background: #f1efff; padding: 2px 6px; border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
